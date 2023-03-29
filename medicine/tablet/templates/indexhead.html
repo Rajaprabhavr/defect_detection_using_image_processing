@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
 
 </head>
-<body style="background-color:#650fdc;">
+<body style="background-color:#0fa2dc;">
   <!--
     <video autoplay muted loop id="bg-video">
         <source src="{% static 'video/gfp-astro-timelapse.mp4' %}" type="video/mp4">
@@ -31,18 +31,20 @@
                   <div class="collapse navbar-collapse" id="navbar-supported-content">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                      
-                      {% if request.session.username %}
+                      
+                        {% if request.session.username %}
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="2">Train/Test</a>
+                        <a class="nav-link" href="#0" data-no="2">Segmentation and comparison</a>
                         <div class="circle"></div>
                       </li>
+                    
                       
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="3">Predict</a>
+                        <a class="nav-link" href="#0" data-no="3">Classifying image</a>
                         <div class="circle"></div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="4">Privacy</a>
+                        <a class="nav-link" href="#0" data-no="4">Colour detection </a>
                         <div class="circle"></div>
                       </li>
                       <li class="nav-item">
