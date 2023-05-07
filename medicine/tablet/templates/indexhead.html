@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Defect Pill Detection</title>
+    <title>Astro Motion by TemplateMo</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/slick.css' %}" type="text/css" /> 
     <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+<!--
+    
+TemplateMo 560 Astro Motion
 
+https://templatemo.com/tm-560-astro-motion
+
+-->
 </head>
-<body style="background-color:#0fa2dc;">
-  <!--
+<body>
     <video autoplay muted loop id="bg-video">
         <source src="{% static 'video/gfp-astro-timelapse.mp4' %}" type="video/mp4">
     </video>
-  -->
     <div class="page-container">
       <div class="container-fluid">
         <div class="row">
@@ -31,20 +35,14 @@
                   <div class="collapse navbar-collapse" id="navbar-supported-content">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                      
-                      
-                        {% if request.session.username %}
+                      {% if request.session.username %}
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="2">Segmentation and comparison</a>
+                        <a class="nav-link" href="{% url 'detect' %}" data-no="2">Detection</a>
                         <div class="circle"></div>
                       </li>
-                    
                       
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="3">Classifying image</a>
-                        <div class="circle"></div>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="4">Colour detection </a>
+                        <a class="nav-link" href="#0" data-no="4">Privacy</a>
                         <div class="circle"></div>
                       </li>
                       <li class="nav-item">
@@ -74,22 +72,21 @@
             <div class="page-width-1 page-left">
               <div class="d-flex position-relative tm-border-top tm-border-bottom intro-container">
                 <div class="intro-left tm-bg-dark">
-                  <h2 class="mb-4">Welcome to Defect Pill Detection</h2>
-                  <p class="mb-4">
-                    This web site is used to recoganize Defected Pill using image processing. </p>
-                  <p class="mb-0">
-                 </p>
+                  {% block content %}
+          
+
+{% endblock %}
+                 
                 </div>
-                <!--
-                  <div class="intro-right">
+                <div class="intro-right">
                   <img src="{% static 'img/home-img-1.jpg' %}" alt="Image" class="img-fluid intro-img-1">
                   <img src="{% static 'img/home-img-2.jpg' %}" alt="Image" class="img-fluid intro-img-2">
                 </div>
-              -->
                 <div class="circle intro-circle-1"></div>
                 <div class="circle intro-circle-2"></div>
                 <div class="circle intro-circle-3"></div>
                 <div class="circle intro-circle-4"></div>
+                
               </div>
               <div class="text-center">
                 <a href="#0" data-page-no="2" class="btn btn-primary tm-intro-btn tm-page-link">
@@ -104,8 +101,7 @@
               <div class="circle intro-circle-1"></div>
               <div class="circle intro-circle-2"></div>
               <div class="mx-auto tm-border-top gallery-slider">
-             
-
+   
 
 
               </div>
@@ -154,7 +150,7 @@
               {% else %}
               <div class="row">
                 <div class="col-md-6 me-0 ms-auto">
-                  <h2 class="mb-4">LOGIN</h2>
+                  <h2 class="mb-4">lOGIN</h2>
                 </div>
               </div>
               <div class="row">
@@ -183,10 +179,10 @@
     <div class="container-fluid">
       <footer class="row mx-auto tm-footer">
         <div class="col-md-6 px-0">
-          
+          Copyright 2021 Astro Motion Company Limited. All rights reserved.
         </div>
         <div class="col-md-6 px-0 tm-footer-right">
-           <a rel="sponsored" href="https://templatemo.com" target="_blank" class="tm-link-white"></a>
+          Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank" class="tm-link-white">TemplateMo</a>
         </div>
       </footer>
     </div>

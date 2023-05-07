@@ -3,6 +3,7 @@ import numpy as np
 import random
 def loadGoldenTemplate(imgpath):
     goldenTemplate = cv2.imread(imgpath)
+    cv2.imshow("Golden template",goldenTemplate)
     goldenTemplateGray = cv2.cvtColor(goldenTemplate, cv2.COLOR_BGR2GRAY)
     goldenTemplateHisteqaul_frame = cv2.equalizeHist(goldenTemplateGray)
     gray_correct = np.array(255 * (goldenTemplateHisteqaul_frame / 255) ** 1.2 , dtype='uint8')
@@ -18,6 +19,7 @@ def loadGoldenTemplate(imgpath):
     labeled_img = cv2.merge([label_hue, blank_ch, blank_ch])
     labeled_img = cv2.cvtColor(labeled_img, cv2.COLOR_HSV2BGR)
     labeled_img[label_hue == 0] = 0
+    cv2.imshow("Golden template",labeled_img)
     
     return ret-1 ,labels
 
@@ -38,6 +40,7 @@ def loadSampleImage(imgpath):
     labeled_img = cv2.merge([label_hue, blank_ch, blank_ch])
     labeled_img = cv2.cvtColor(labeled_img, cv2.COLOR_HSV2BGR)
     labeled_img[label_hue == 0] = 0
+    
   
     return ret-1,labels
 

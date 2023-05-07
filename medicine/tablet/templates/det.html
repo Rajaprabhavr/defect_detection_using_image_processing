@@ -1,0 +1,31 @@
+{% extends "indexhead.html" %}
+{% load static %}
+{% block content %}
+<form method="post" action="{% url 'detect' %}" enctype="multipart/form-data">
+    {% csrf_token%}
+    <table>
+      <tr>
+        <th>Pill type</th><td>
+          <select name="t1">
+            <option value="1">ovel</option>
+            <option value="2">Round</option>
+            <option value="3">single color</option>
+            <option value="4">multi color</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>Goldern Template</th><td><input type="file" name="f1"/></td>
+      </tr>
+      <tr>
+        <th>sample to test</th><td><input type="file" name="f2"/></td>
+      </tr>
+    </table>
+    <div class="input-group justify-content-end">
+      <input type="submit" class="btn btn-primary tm-btn-pad-2" value="detect">
+  </div>
+  </form>
+
+  <h1>{{msg}}</h1>
+  <h2>{{defect}}</h2>
+{% endblock %}
