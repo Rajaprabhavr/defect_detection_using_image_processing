@@ -241,7 +241,7 @@ def singleColorPill(golden,sample):
     goldenarea = loadSingleColorGolden(golden)
     thresh = sum(goldenarea)/len(goldenarea)
     #"red2.jpg"
-    samplearea = loadSingleColorsample(sample,thresh)
+    samplearea = loadSingleColorsample(sample)#,thresh)
     msg = ""
     if len(goldenarea) == len(samplearea):
         msg = "sample has correct number of tablets."
